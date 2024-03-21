@@ -1,0 +1,76 @@
+Aula - 01 
+Automação de tarefa
+Biblioteca pyautogui
+    clicar -> pyautogui.click() - x e y 
+    escrever -> pyautogui.write()
+    apartar uma tecla -> pyautogui.press()
+    atalho -> pyautogui.hotkey ()
+    scroll -> pyautogui.scroll()
+    pyautogui.PAUSE -> Espera um tempo a cada comando
+    pyautogui.position() -> Mostra a posição do mouse na tela
+    NaN -> not a number isna
+
+Dentro dos parentese escrever a tecla ou a palavra entre aspas
+
+Fazer o passo a passo do progama
+
+pip install panda numpy openpyxl
+
+Aula - 02
+Base de dados
+    -pandas as pd (transforma o panda em pd)
+    -identificar as cagadas
+        ->colunas inuteis - informações que não te ajuda e atrapalha
+            ->jogar fora um elemento ou coluna (drop) (columns=coluna, index=linha)
+        ->valores vazios
+            ->olhar o resumo da tabela (tabela.info())
+            ->excluir as linhas com valores vazios (dropna())
+    -analisar quantas pessoas cancelaram na base de dados
+        ->contar (tabela['cancelou'].value_conts())
+        -> contar em percentual (tabela['cancelou'].value_conts(normalize=True))
+        -> criar um grafico (pip install plotly) (import plotly.express)
+            ->desenhar o grafico 
+                ->grafico = px.histogram(tabela, x='duraxao_contrato',color='cancelou')
+            ->exibir o grafico
+                ->grafico.show()
+& junta condições
+
+Aula 03
+Criação de IA com python    
+    -Tratar colunas em formato de txt, pq a IA so interpreta numeros
+        -> atribuir para cada valor em texto um numero diferente
+        -> from sklearn.preprocessing import LabelEncoder 
+        -> codificar a coluna em numeros (codificador = LabelEncoder(tabela['profisão']))
+    -Ensinar a IA 
+        -> dados de teste   
+            - verificar se a IA aprendeu
+        -> dados de treino
+            - IA vai aprender com os treinos
+        -> qual coluna prever 
+            - chamada de y
+        -> coluna usada para aprender 
+            - chamada de x
+        -> x_treino x_teste y_treino y_teste = train_test_split(x, y, test_size=)
+    -Modelos de IA
+        -> Árvore de Decisão = RandomForestClassifer
+            -faz perguntas a base de dados (sim e não)
+        -> KNN = Vizinhos Próximos = KNeighboorsClassifier
+            -plotar os dados em um grafico
+            -pega os dois extremos e um meio
+            -e dps pega os Vizinhos desses dados
+            -quem estivar mais proximo adquire o valor
+        -> treinar os Modelos
+            -fit(x_treino, y_treino)
+        -> testar os modelos e comparalos
+            -predict(x_teste.to_numpy())
+            -calcular a acuracia dos modelos = accuracy_score(y_teste, previsão_arvore)
+    -Fazer novas previsões
+        -> importar novos clientes
+        -> codificador os novos clientes
+        -> modelo_arvorededecisoes.predict(tabela_novos_clientes) 
+
+Aula 04
+Criação de sites 
+    -Flet = pip install flet 
+
+OPENCV  
